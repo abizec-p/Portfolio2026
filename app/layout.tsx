@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${heading.variable} ${body.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body">
+      <body className="min-h-full flex mx-auto flex-col font-body">
         <div className="bg-dots pointer-events-none fixed inset-0 -z-10" />
         <Nav />
         <main className="">{children}</main>
