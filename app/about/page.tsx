@@ -6,7 +6,7 @@ import { MdDownload } from "react-icons/md";
 export default function About() {
   return (
     <div className="h-full my-10  ">
-      <div className="mt-20 relative   flex flex-col items-center justify-center">
+      <div className=" mt-10 md:mt-20 relative   flex flex-col items-center justify-center">
         <Image
           src="/dp.jpeg"
           height={10000}
@@ -14,11 +14,11 @@ export default function About() {
           className="w-90 md:w-180 h-auto rounded-xl opacity-70"
           alt="image"
         />
-        <h1 className="absolute bottom-20 text-orange-400 animate-pulse text-3xl md:text-6xl text-shadow-lg  font-bold ">
+        <h1 className="absolute bottom-10 md:bottom-20 text-orange-400 animate-pulse text-3xl md:text-6xl text-shadow-lg  font-bold ">
           -about me-
         </h1>
       </div>
-      <div className="mt-20 gap-30 mx-5 md:mx-30  flex flex-col md:flex-row items-center">
+      <div className="mt-5 md:mt-20 gap-30 mx-5 md:mx-30  flex flex-col md:flex-row items-center">
         <div>
           <h1 className="font-bold text-orange-400  text-5xl py-5">
             Hello there
