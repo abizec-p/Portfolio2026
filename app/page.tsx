@@ -8,6 +8,7 @@ import { MdDownload } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import Contact from "./contact/page";
+import Footer from "../components/footer"
 
 export default function Page() {
   return (
@@ -20,19 +21,20 @@ export default function Page() {
             </h1>
           </div>
           <div className="flex pt-3 md:pt-0 gap-10 *:text-neutral-600 *:hover:text-black ">
-            <Link
+            <Link target="_blank"
               className="transition hover:text-orange-500"
               href="https://github.com/abizec-p"
             >
               <FaGithub size={20} />
             </Link>
             <Link
+            target="_blank"
               className=" text-black-500 hover:text-black"
               href="https://linkedin.com/in/abishek-pariyar"
             >
               <FaLinkedin size={20} />
             </Link>
-            <Link
+            <Link target="_blank"
               className="hover:text-neutral-100"
               href="mailto:abijakepariyar@gmail.com"
             >
@@ -55,17 +57,24 @@ export default function Page() {
         </p>
       </div>
       <div className="flex px-5 h-10 w-full justify-start  md:justify-center gap-5 mt-10 items-center ">
-        <button className=" py-2 px-5 flex rounded bg-orange-400 text-white font-bold">
+        <a
+          href="/contact"
+          className=" py-2 px-5 flex rounded bg-orange-400 text-white font-bold"
+        >
           Contact Me
-        </button>
-        <button className=" py-2 px-5 flex border rounded  items-center  text-black font-bold">
+        </a>
+        <a
+          download="AbishekPariyar-Resume.pdf"
+          href="/resume.pdf"
+          className=" py-2 px-5 flex border rounded  items-center  text-black font-bold"
+        >
           Resume <MdDownload size={23} className="pl-2" />
-        </button>
+        </a>
       </div>
       <div className=" hidden md:block md:absolute bottom-8 md:bottom-25 left-1/2 -translate-x-1/2">
         <MdKeyboardArrowDown size={32} className="animate-bounce" />
       </div>
-      <Project  />
+      <Project />
       <Skills />
       <div className="flex mt-40 border-b border-double border-neutral-300 p-10 mx-20 flex-col items-center">
         <h1 className="text-2xl w-90 md:text-5xl md:w-200 font-bold">
@@ -73,7 +82,7 @@ export default function Page() {
           <span className="text-orange-500"> Web Developer </span> & Graphic
           Design roles.
         </h1>
-        <p className="text-sm ml-20  w-70">
+        <p className="text-sm md:text-lg ml-20  w-70 md:w-120">
           Detail-oriented, fast learner, and happiest when turning an idea into
           a working product. If that sounds like your team, let’s talk.
         </p>
@@ -87,9 +96,8 @@ export default function Page() {
         </Link>
       </div>
       <div id="contact">
-      <Contact />
+        <Contact />
       </div>
-    
     </>
   );
 }

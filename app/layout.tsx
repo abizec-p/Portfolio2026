@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Sora, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import Footer from "@/components/footer";
 
 const heading = Bricolage_Grotesque({
   variable: "--font-Bricolage_Grotesque",
@@ -29,6 +30,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="bg-dots pointer-events-none fixed inset-0 -z-10" />
         <Nav />
         <main className="">{children}</main>
+              <Footer/>
+
       </body>
     </html>
   );

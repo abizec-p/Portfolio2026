@@ -43,9 +43,10 @@ export default function Skills() {
           to deployed site, using Next.js, TypeScript, and Supabase.
         </h1>
         <a
-          href="/resume.pdf"
           className="rounded mx-5 md:mx-0 z-100 my-5 inline-block hover:bg-orange-700 p-3  md:p-4 bg-orange-500 text-sm md:text-xl"
           download="AbishekPariyar-Resume.pdf"
+                    href="/resume.pdf"
+
         >
           Download resume
         </a>
