@@ -30,7 +30,10 @@ export default function Project() {
                 <p className=" w-90 md:w-100">
                   {pro.description}{" "}
                   <a href={pro.github} className="italic text-sm text-blue-700">
-                    View Code
+                    Visit Live /
+                  </a>
+                  <a href={pro.github} className="italic text-sm text-blue-700">
+                    / View Code
                   </a>
                 </p>
 
@@ -45,7 +48,7 @@ export default function Project() {
               <div>
                 <a target="_blank" href={pro.live}>
                   <Image
-                    className="my-5 md:my-0 md:gap-5 shadow-sm h-auto w-full border border-neutral-300 rounded-lg"
+                    className="my-5 md:my-0 md:gap-5 shadow-sm h-auto w-full border border-neutral-300 rounded-lg  md:min-w-90"
                     src={pro.image}
                     alt={pro.title}
                     height={200}

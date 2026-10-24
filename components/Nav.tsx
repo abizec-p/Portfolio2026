@@ -4,7 +4,7 @@ export default function Nav() {
     <>
     <div className="flex gap-30 md:gap-200 h-15 bg-white  border-b-1 border-[#ebebeb] p-2 md:p-5 justify-around"> 
     <div>
-      <h1 className="hidden md:block font-bold text-xl"><Link href="/">Abishek pariyar</Link></h1>
+      <h1 className="hidden md:block font-bold text-xl"><Link href="/">Abishek Pariyar</Link></h1>
       <h1 className="md:hidden font-bold text-xl"><Link href="/">AP.</Link></h1>
 
     </div>

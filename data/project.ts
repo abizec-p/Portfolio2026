@@ -36,6 +36,24 @@ export const projects: Project[] = [
     github: "https://github.com/abizec-p/expensetracker",
   },
   {
+    title: "Chiya Pasal - Nepali teashop experience",
+    description:
+      "An interactive Nepali radio experience set in a nostalgic chiya pasal. Tune a vintage radio between music and news stations, built with Next.js, TypeScript, and Tailwind CSS, and powered by an API.",
+    image: "/projects/chiyapasal.png",
+    stack: ["Next.js", "TypeScript", "Api integration"],
+    live: "https://chiyapasal.icu/",
+    github: "https://github.com/abizec-p/chiyapasal",
+  },
+  {
+    title: "Portfolio 2026 - My current portfolio",
+    description:
+      "My personal portfolio, designed and built from scratch with Next.js . I created the branding, including a custom logo, and focused on a clean, modern layout that’s fast, responsive, and easy to extend as I add new projects.",
+    image: "/projects/portfolio2026.png",
+    stack: ["Next.js", "TypeScript", "Data"],
+    live: "https://abishekpariyar.com/",
+    github: "https://github.com/abizec-p/portfolio2026",
+  },
+  {
     title: "Next.js App router",
     description:
       "Dashboard app built with the Next.js App Router, covering nested layouts, server components, data fetching and authentication.",

@@ -8,7 +8,7 @@ import { MdDownload } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import Contact from "./contact/page";
-import Footer from "../components/footer"
+import Footer from "../components/footer";
 
 export default function Page() {
   return (
@@ -21,20 +21,22 @@ export default function Page() {
             </h1>
           </div>
           <div className="flex pt-3 md:pt-0 gap-10 *:text-neutral-600 *:hover:text-black ">
-            <Link target="_blank"
+            <Link
+              target="_blank"
               className="transition hover:text-orange-500"
               href="https://github.com/abizec-p"
             >
               <FaGithub size={20} />
             </Link>
             <Link
-            target="_blank"
+              target="_blank"
               className=" text-black-500 hover:text-black"
               href="https://linkedin.com/in/abishek-pariyar"
             >
               <FaLinkedin size={20} />
             </Link>
-            <Link target="_blank"
+            <Link
+              target="_blank"
               className="hover:text-neutral-100"
               href="mailto:abijakepariyar@gmail.com"
             >
@@ -44,8 +46,12 @@ export default function Page() {
         </div>
       </div>
       <div className="flex flex-col items-center mt-5 md:mt-10 justify-center">
-        <h1 className="font-bold text-left pl-0 md:pl-0 md:text-center w-[90%] md:w-220 text-5xl md:text-5xl">
-          From scratch to the final product, I love building{" "}
+        <h1 className="font-bold text-left pl-0 md:pl-0 md:text-center w-[90%] md:w-230 text-[42px] leading-tight md:leading-none md:text-6xl">
+          <span className="hidden md:block">
+            {" "}
+            From scratch to the final product,{" "}
+          </span>{" "}
+          I love building{" "}
           <span className="text-orange-500">web experiences</span> that work and
           look great.
         </h1>
@@ -66,12 +72,12 @@ export default function Page() {
         <a
           download="AbishekPariyar-Resume.pdf"
           href="/resume.pdf"
-          className=" py-2 px-5 flex border rounded  items-center  text-black font-bold"
+          className=" py-2 px-5 flex border rounded backdrop-blur bg-white/80  items-center  text-black font-bold"
         >
           Resume <MdDownload size={23} className="pl-2" />
         </a>
       </div>
-      <div className=" hidden md:block md:absolute bottom-8 md:bottom-25 left-1/2 -translate-x-1/2">
+      <div className=" hidden md:block md:absolute bottom-5 md:bottom-10 left-1/2 -translate-x-1/2">
         <MdKeyboardArrowDown size={32} className="animate-bounce" />
       </div>
       <Project />
