@@ -9,6 +9,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import Contact from "./contact/page";
 
 export default function Page() {
+
+
   return (
     <>
       <div className="flex justify-center">
