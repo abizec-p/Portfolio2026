@@ -21,9 +21,9 @@ export const projects: Project[] = [
     title: "TasteHome",
     description:
       "Full-stack food marketplace with a custom-built auth system, protected routes and Supabase row-level security.",
-    image: "/projects/tastehome.png",
+    image: "/projects/taho.png",
     stack: ["Next.js", "TypeScript", "Supabase"],
-    live: "https://taste-home.vercel.app/",
+    live: "https://taho-sigma.vercel.app/",
     github: "https://github.com/abizec-p/TasteHome",
   },
   {
