@@ -25,76 +25,73 @@ export default async function Project() {
       </div>
 
       <div>
-        {projects
-          .filter((pro) => pro.featured)
-          .slice(0, 4)
-          .map((pro) => (
-            <div
-              className="border-b py-5 md:p-5 flex flex-col-reverse md:flex-row justify-between border-neutral-300"
-              key={pro.id}
-            >
-              <div>
+        {projects.slice(0, 4).map((pro) => (
+          <div
+            className="border-b py-5 md:p-5 flex flex-col-reverse md:flex-row justify-between border-neutral-300"
+            key={pro.id}
+          >
+            <div>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={pro.live_url ?? "#"}
+                className="font-bold flex text-2xl"
+              >
+                {pro.title} <FiArrowUpRight size={15} />
+              </a>
+
+              <p className="w-90 md:w-100">
+                {pro.description}{" "}
+                {pro.live_url && (
+                  <a
+                    href={pro.live_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="italic text-sm text-blue-700"
+                  >
+                    Visit Live /
+                  </a>
+                )}
+                {pro.github_url && (
+                  <a
+                    href={pro.github_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="italic text-sm text-blue-700"
+                  >
+                    / View Code
+                  </a>
+                )}
+              </p>
+
+              <div className="flex gap-2 mt-2">
+                {pro.technologies?.map((stk: string) => (
+                  <div className="gap-2" key={stk}>
+                    <div className="text-xs p-1 border rounded">{stk}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              {pro.thumbnail_url && (
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={pro.live_url ?? "#"}
-                  className="font-bold flex text-2xl"
                 >
-                  {pro.title} <FiArrowUpRight size={15} />
+                  <Image
+                    className="my-5 md:my-0 md:gap-5 shadow-sm h-auto w-full border border-neutral-300 rounded-lg md:min-w-90"
+                    src={pro.thumbnail_url}
+                    alt={pro.title}
+                    height={200}
+                    width={200}
+                  />
                 </a>
-
-                <p className="w-90 md:w-100">
-                  {pro.description}{" "}
-                  {pro.live_url && (
-                    <a
-                      href={pro.live_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="italic text-sm text-blue-700"
-                    >
-                      Visit Live /
-                    </a>
-                  )}
-                  {pro.github_url && (
-                    <a
-                      href={pro.github_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="italic text-sm text-blue-700"
-                    >
-                      / View Code
-                    </a>
-                  )}
-                </p>
-
-                <div className="flex gap-2 mt-2">
-                  {pro.technologies?.map((stk: string) => (
-                    <div className="gap-2" key={stk}>
-                      <div className="text-xs p-1 border rounded">{stk}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                {pro.thumbnail_url && (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={pro.live_url ?? "#"}
-                  >
-                    <Image
-                      className="my-5 md:my-0 md:gap-5 shadow-sm h-auto w-full border border-neutral-300 rounded-lg md:min-w-90"
-                      src={pro.thumbnail_url}
-                      alt={pro.title}
-                      height={200}
-                      width={200}
-                    />
-                  </a>
-                )}
-              </div>
+              )}
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     </div>
   );
