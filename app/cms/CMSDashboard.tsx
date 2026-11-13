@@ -17,6 +17,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { refreshProjects } from "./actions";
 
 type Project = {
   id: string;
@@ -248,6 +249,8 @@ export default function CMSDashboard() {
       setForm(emptyForm);
       setEditingId(null);
 
+      // Refresh the cached /work page
+      await refreshProjects();
       await loadProjects();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unable to save project.");
@@ -270,6 +273,8 @@ export default function CMSDashboard() {
       return;
     }
 
+    // Refresh the cached /work page
+    await refreshProjects();
     await loadProjects();
   }
 
