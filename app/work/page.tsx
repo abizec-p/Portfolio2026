@@ -1,19 +1,30 @@
-
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
-import { createClient } from "@/lib/supabase/server";
+import { cacheLife, cacheTag } from "next/cache";
+import { supabasePublic } from "@/lib/supabase/public";
 
-export default async function Project() {
-  const supabase = await createClient();
+async function getProjects() {
+  "use cache";
+  cacheLife("hours");
+  cacheTag("projects");
 
-  const { data: projects, error } = await supabase
+  const { data, error } = await supabasePublic
     .from("projects")
     .select("*")
     .eq("status", "published")
     .order("created_at", { ascending: false });
 
-  if (error) {
-    console.error("Error fetching projects:", error.message);
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export default async function Project() {
+  let projects;
+
+  try {
+    projects = await getProjects();
+  } catch (e) {
+    console.error("Error fetching projects:", e);
     return <p>Unable to load projects.</p>;
   }
 

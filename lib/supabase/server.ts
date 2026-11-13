@@ -1,5 +1,6 @@
 
 import { createServerClient } from "@supabase/ssr";
+import { Suspense } from "react";
 import { cookies } from "next/headers";
 
 export async function createClient() {
