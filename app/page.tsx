@@ -1,14 +1,12 @@
-import About from "@/app/about/page";
+import { Suspense } from "react";
 import Project from "@/components/project";
 import Skills from "@/components/skills";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { MdDownload } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { GoDotFill } from "react-icons/go";
 import Contact from "./contact/page";
-import Footer from "../components/footer";
 
 export default function Page() {
   return (
@@ -80,7 +78,11 @@ export default function Page() {
       <div className=" hidden md:block md:absolute bottom-5 md:bottom-10 left-1/2 -translate-x-1/2">
         <MdKeyboardArrowDown size={32} className="animate-bounce" />
       </div>
-      <Project />
+      <Suspense
+        fallback={<p className="text-center py-10">Loading projects...</p>}
+      >
+        <Project />
+      </Suspense>
       <Skills />
       <div className="flex mt-40 border-b border-double border-neutral-300 p-10 mx-20 flex-col items-center">
         <h1 className="text-2xl w-90 md:text-5xl md:w-200 font-bold">
